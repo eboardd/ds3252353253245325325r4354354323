@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const fetch = require("node-fetch");
 const port = require ("port");
+client.commands = new Collection();
+
 
 const client = new Client({
     intents: Object.values(Discord.IntentsBitField.Flags),
@@ -250,16 +252,18 @@ setInterval(() => {
     })
   })
 
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000;
+      // Sunucu oluşturma ve proje aktivitesi sağlama.
+const express = require('express');
+const app = express();
+const port = 8087;
 
+     // Web sunucu
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.sendStatus(200);
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
+});
 
 client.login(process.env.token)
