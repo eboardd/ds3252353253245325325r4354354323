@@ -250,18 +250,16 @@ setInterval(() => {
     })
   })
 
-    // Sunucu oluşturma ve proje aktivitesi sağlama.
-const express = require('express');
-const app = express();
-const port = 4000;
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
 
-// Web sunucu
 app.get('/', (req, res) => {
-  res.sendStatus(200);
-});
+  res.send('Hello World!')
+})
 
 app.listen(port, () => {
-  console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
-});
+  console.log(`Example app listening on port ${port}`)
+})
 
 client.login(process.env.token)
