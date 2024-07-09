@@ -1,4 +1,4 @@
-﻿const { PermissionsBitField, EmbedBuilder, ButtonStyle, Client, GatewayIntentBits, ChannelType, Partials, ActionRowBuilder, SelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, InteractionType, SelectMenuInteraction, ButtonBuilder, AuditLogEvent } = require("discord.js");
+const { PermissionsBitField, EmbedBuilder, ButtonStyle, Client, GatewayIntentBits, ChannelType, Partials, ActionRowBuilder, SelectMenuBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, InteractionType, SelectMenuInteraction, ButtonBuilder, AuditLogEvent } = require("discord.js");
 const Discord = require("discord.js");
 const fs = require("fs");
 const fetch = require("node-fetch");
@@ -45,6 +45,7 @@ readdirSync('./events').forEach(e => {
     console.log(chalk.blue`[EVENT]` + ` ${name} eventi yüklendi.`)
 });
 
+client.login(process.env.token)
 client.setMaxListeners(50)
 
 process.on("uncaughtException", async (error) => {
@@ -248,18 +249,3 @@ setInterval(() => {
       }
     })
     })
-// Sunucu oluşturma ve proje aktivitesi sağlama.
-const express = require('express');
-const app = express();
-const port = 80;
-
-// Web sunucu
-app.get('/', (req, res) => {
-  res.sendStatus(200);
-});
-
-app.listen(port, () => {
-  console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
-});
-
-client.login(process.env.token)
