@@ -2,6 +2,7 @@ const { PermissionsBitField, EmbedBuilder, ButtonStyle, Client, GatewayIntentBit
 const Discord = require("discord.js");
 const fs = require("fs");
 const fetch = require("node-fetch");
+const port = require ("port");
 
 const client = new Client({
     intents: Object.values(Discord.IntentsBitField.Flags),
