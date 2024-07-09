@@ -2,7 +2,6 @@ const { PermissionsBitField, EmbedBuilder, ButtonStyle, Client, GatewayIntentBit
 const Discord = require("discord.js");
 const fs = require("fs");
 const fetch = require("node-fetch");
-const port = require ("port");
 client.commands = new Collection();
 
 
@@ -255,7 +254,7 @@ setInterval(() => {
       // Sunucu oluşturma ve proje aktivitesi sağlama.
 const express = require('express');
 const app = express();
-const port = 8087;
+const port = 80;
 
      // Web sunucu
 app.get('/', (req, res) => {
