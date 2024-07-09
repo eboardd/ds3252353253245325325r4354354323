@@ -45,7 +45,6 @@ readdirSync('./events').forEach(e => {
     console.log(chalk.blue`[EVENT]` + ` ${name} eventi yüklendi.`)
 });
 
-client.login(process.env.token)
 client.setMaxListeners(50)
 
 process.on("uncaughtException", async (error) => {
@@ -248,16 +247,20 @@ setInterval(() => {
             return interaction.reply({ embeds: [embed], ephemeral: true })
       }
     })
-    })
+  })
 
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 4000;
+    // Sunucu oluşturma ve proje aktivitesi sağlama.
+const express = require('express');
+const app = express();
+const port = 4000;
 
+// Web sunucu
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.sendStatus(200);
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Sunucu ${port} numaralı bağlantı noktasında yürütülüyor.`);
+});
+
+client.login(process.env.token)
